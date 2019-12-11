@@ -2,7 +2,7 @@
     var text = "Hello, World!"
 }*/
 
-protocol Iconnizable {
+public protocol Iconnizable {
     var ok: String { get }
     var error: String { get }
     var page: String { get }
@@ -11,9 +11,9 @@ protocol Iconnizable {
 }
 
 extension String:Iconnizable {
-    var ok: String { return self+" 🍏"}
-    var error: String { return self+" 🍎"}
-    var page:String { return self+" ☀️" }
-    var warning:String { return self+" ⚠️" }
-    var clock:String { return self+" ⏱" }
+    public var ok: String { return self+" 🍏"}
+    public var error: String {return self+" 🍎"}
+    public var page:String { return self+" ☀️" }
+    public var warning:String { return self+" ⚠️" }
+    public var clock:String { return self+" ⏱" }
 }
