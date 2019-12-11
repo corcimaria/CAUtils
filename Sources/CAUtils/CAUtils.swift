@@ -18,8 +18,16 @@ extension String:Iconnizable {
     public var clock:String { return self+" ⏱" }
 }
 
-class CAUtils {
-    public static func sadsadasd() -> Int {
-        return 1234
+class XXX {
+    public static func mmmmm() -> String {
+        return "mmmmm"
     }
+}
+
+public func iiiii() -> String {
+    return "iiiii"
+}
+
+public func ooooo() -> String {
+    return "ooooo"
 }
