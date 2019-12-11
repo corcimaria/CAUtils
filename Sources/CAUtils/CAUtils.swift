@@ -24,6 +24,18 @@ public class XXX {
     }
 }
 
+public class TTT {
+    init(a:Int) {
+        _ = SSS(b: 10)
+    }
+}
+
+class SSS {
+    init(b:Int) {
+           
+    }
+}
+
 public func iiiii() -> String {
     return "iiiii"
 }
