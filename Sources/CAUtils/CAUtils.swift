@@ -22,10 +22,12 @@ public class XXX {
     public static func mmmmm() -> String {
         return "mmmmm"
     }
+    
+    public init() {}
 }
 
 public class TTT {
-    init(a:Int) {
+    public init(a:Int) {
         _ = SSS(b: 10)
     }
 }
