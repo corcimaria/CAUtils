@@ -19,7 +19,7 @@ extension String:Iconnizable {
 }
 
 class CAUtils {
-    static func sadsadasd() -> Int {
+    public static func sadsadasd() -> Int {
         return 1234
     }
 }
