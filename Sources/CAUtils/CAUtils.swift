@@ -17,3 +17,9 @@ extension String:Iconnizable {
     public var warning:String { return self+" ⚠️" }
     public var clock:String { return self+" ⏱" }
 }
+
+class CAUtils {
+    static func sadsadasd() -> Int {
+        return 1234
+    }
+}
