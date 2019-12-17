@@ -5,7 +5,7 @@
 //  Created by Anatolie on 12/17/19.
 //
 
-import Foundation
+import UIKit
 
 extension CGPoint {
     func distance(to point: CGPoint) -> CGFloat {
