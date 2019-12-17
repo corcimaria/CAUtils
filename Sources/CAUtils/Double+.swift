@@ -8,5 +8,5 @@ import Foundation
 import UIKit
 
 extension Double {
-  var f: CGFloat { return CGFloat(self) }
+  public var f: CGFloat { return CGFloat(self) }
 }

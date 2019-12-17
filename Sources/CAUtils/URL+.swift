@@ -8,7 +8,7 @@
 import Foundation
 
 extension URL {
-    static func createFolder(folderName: String) -> Void {
+    public func createFolder(folderName: String) -> Void {
         let fileManager = FileManager.default
         // Get document directory for device, this should succeed
         if let documentDirectory = fileManager.urls(for: .documentDirectory,

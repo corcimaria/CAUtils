@@ -9,5 +9,5 @@ import UIKit
 import Foundation
 
 extension Int {
-  var f: CGFloat { return CGFloat(self) }
+  public var f: CGFloat { return CGFloat(self) }
 }

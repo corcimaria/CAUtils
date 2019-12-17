@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension Array where Element == CGFloat {
-    func sum() -> CGFloat{
+    public func sum() -> CGFloat{
         self.reduce(0, +)
     }
 }
