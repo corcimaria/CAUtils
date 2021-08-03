@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 
+
+extension UIStoryboard {
+    enum Name : String {
+        case main = "Main"
+    }
+}
 /*extension UIStoryboard {
     enum Name : String {
         case main = "Main"
