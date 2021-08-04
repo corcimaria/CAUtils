@@ -9,10 +9,49 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    convenience public init(red: Int, green: Int, blue: Int) {
-        assert(red >= 0 && red <= 255, "Invalid red component")
-        assert(green >= 0 && green <= 255, "Invalid green component")
-        assert(blue >= 0 && blue <= 255, "Invalid blue component")
-        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    /// color components value between 0 to 255
+    public convenience init(r: Int, g: Int, b: Int, alpha: CGFloat = 1.0) {
+        self.init(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: alpha)
+    }
+    static let customRed: UIColor = UIColor(r: 255, g: 1, b: 1)
+    
+    var hexString: String {
+            let cgColorInRGB = cgColor.converted(to: CGColorSpace(name: CGColorSpace.sRGB)!, intent: .defaultIntent, options: nil)!
+            let colorRef = cgColorInRGB.components
+            let r = colorRef?[0] ?? 0
+            let g = colorRef?[1] ?? 0
+            let b = ((colorRef?.count ?? 0) > 2 ? colorRef?[2] : g) ?? 0
+            let a = cgColor.alpha
+
+            var color = String(
+                format: "#%02lX%02lX%02lX",
+                lroundf(Float(r * 255)),
+                lroundf(Float(g * 255)),
+                lroundf(Float(b * 255))
+            )
+
+            if a < 1 {
+                color += String(format: "%02lX", lroundf(Float(a * 255)))
+            }
+
+            return color
+        }
+    
+    convenience init(hexString: String) {
+        let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int = UInt64()
+        Scanner(string: hex).scanHexInt64(&int)
+        let a, r, g, b: UInt64
+        switch hex.count {
+        case 3: // RGB (12-bit)
+            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+        case 6: // RGB (24-bit)
+            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+        case 8: // ARGB (32-bit)
+            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+        default:
+            (a, r, g, b) = (255, 0, 0, 0)
+        }
+        self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
 }

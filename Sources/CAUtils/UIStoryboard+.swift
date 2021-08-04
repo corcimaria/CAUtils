@@ -11,27 +11,9 @@ import UIKit
 
 extension UIStoryboard {
     enum Name : String {
-        case main = "Main"
+        case none = "None"
     }
 }
-/*extension UIStoryboard {
-    enum Name : String {
-        case main = "Main"
-        case settings = "Settings"
-        case pulse_rate = "PulseRate"
-        case exercises = "Exercises"
-        case relax = "Relax"
-        case get_started = "GetStarted"
-        case shop = "Shop"
-        case diary = "Diary"
-        case statistics = "Statistics"
-        case news = "News"
-        case reminders = "Reminders"
-        
-        case mainIphone = "MainIphone"
-        case mainIpad = "MainIpad"
-    }
-}*/
 
 extension UIViewController {
     static var storyboardID: String {
