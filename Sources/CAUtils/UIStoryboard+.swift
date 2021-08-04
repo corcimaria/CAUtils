@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-extension UIStoryboard {
+/*extension UIStoryboard {
     enum Name : String {
         case none = "None"
     }
@@ -31,5 +31,5 @@ extension StoryboardLoadable where Self: UIViewController {
         let controller = storyboard.instantiateViewController(withIdentifier: storyboardID) as! Self
         return controller
     }
-}
+}*/
 
